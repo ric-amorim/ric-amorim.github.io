@@ -145,7 +145,7 @@ a:hover{
 /* hero background image */
 body {
     height:100vh;
-    background: url('tree.jpg');
+    background: url('./images/tree.jpg');
     background-size:cover;
     background-position: top;
     background-repeat: no-repeat;
