@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ricardo Amorim</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="mediaqueries.css">
 </head>
 <body>
-  <nav id="desktop-nav">
+  <nav id="desktop-nav" class="sticky-nav">
     <div class="logo">Ricardo Amorim</div>
     <div>
-      <url class="nav-links">
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
-      </url>
+      </ul>
     </div>
   </nav>
   <nav>
@@ -36,7 +36,46 @@
       </div>
     </nav>
   </nav>
+  <!-- main banner -->
+  <section class="bgimage" id="home">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="hero-text">
+          <h2 class="hero_title">Hi, it's me Ricardo</h2>
+          <p class="hero_desc">I am a computer science student</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- about -->
+  <section id="about">
+    <div class="container">
+      <p class="section__text__p1">Get to Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img src="me.jpg" alt="Profile picture" class="about-pic"/>
+        </div>
+        <div class="sites-container">
+            <a href="https://github.com/ric-amorim"> <img src="github.jpg" alt="github"/></a>
+            <a href="https://www.linkedin.com/in/ricardoaraujoamorim/"> <img src="linkedin.jpg" alt="linkedin"/></a>
+            <a href="https://dev.to/amorino"> <img src="dev.png" alt="dev"/></a>
+            
+          </div>
+          </div>
+        </div>
+        <div class="text-container">
+          <p>
+            Student with a passion for technology, currently in the 2nd year of Computer Science at the University of Porto. I am constantly looking for opportunities to expand my knowledge and keep up with emerging trends in the Computer Science area. I am curious and always open to new experiences and challenges.
+          </p>
+          <p>
+            During my academic path, I have developed skills in programming, algorithms and data structures, besides acquiring knowledge in areas such as mathematics, artificial intelligence, computer security, operation systems, among others.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Your existing scripts -->
   <script src="script.js"></script>
 </body>
 </html>
-
