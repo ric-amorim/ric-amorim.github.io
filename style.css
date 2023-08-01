@@ -145,7 +145,7 @@ a:hover{
 /* hero background image */
 body {
     height:100vh;
-    background: url('./images/tree.jpg');
+    background: url('./images/tree2.png');
     background-size:cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -173,7 +173,7 @@ body {
 
 #about{
   position: relative;
-  margin-top: 1100px;
+  margin-top: 800px;
 }
 
 .about-containers{
