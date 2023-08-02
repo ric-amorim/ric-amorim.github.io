@@ -56,9 +56,12 @@ a:hover{
   text-decoration-color: rgb(181, 181, 181);
 }
 
+
 .logo{
-  font-size: 2rem;
+  font-size: 1.5rem;
+  list-style: none;
   color: white;
+  margin-top: 1px;
 }
 
 .logo:hover{
@@ -97,7 +100,7 @@ a:hover{
   position: absolute;
   top: 100%;
   right: 0%;
-  background-color: black;
+  background-color: #333;
   width: fit-content;
   max-height: 0;
   overflow: hidden;
@@ -152,10 +155,45 @@ body {
     position:relative;
 }
 /* text css above hero image*/
-.hero_title {
-    font-size: 4.5rem;
-    color: white;
+/* Keyframes for the typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
+
+/* Cursor animation with blinking */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Apply the typing animation to the .hero_title class */
+.hero_title {
+  font-size: 4.5rem;
+  color: white;
+  overflow: hidden; /* Hide overflowing text */
+  white-space: nowrap; /* Prevent line breaks */
+  position: relative; /* Position for cursor */
+  animation: typing 2.5s steps(40, end) 1s forwards; /* Adjust typing animation properties */
+}
+
+/* Create the cursor element */
+.hero_title::after {
+  content: "|"; /* Cursor symbol */
+  position: absolute;
+  right: -0.2em; /* Adjust cursor positioning */
+  opacity: 1;
+  animation: blink 1.5s infinite 3.5s; /* Cursor blinking animation with a delay */
+}
+
 .hero_desc {
     font-size: 2rem;
     color:white;
@@ -250,14 +288,18 @@ body {
   filter: brightness(50%); /* Adjust the brightness as needed to change the color */
 }
 
-/* Adicione a classe sticky-nav ao seu elemento nav */
+
+/* Add styling for the sticky navbar */
 .sticky-nav {
-  position: sticky;
-  max-height: 40px;
+  background-color: #333;
+  padding: 10px 0;
+  position: fixed;
   top: 0;
-  background-color: #333; /* Defina a cor de fundo para a barra */
-  padding: 10px 0; /* Ajuste o espaçamento interno conforme desejado */
-  z-index: 100; /* Certifique-se de que o z-index seja maior do que os outros elementos para que fique sobreposto */
+  max-height: 40px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  /* Add any other styles you want for the sticky navbar */
 }
 
 /* Estilos para os links do menu */
@@ -452,4 +494,59 @@ body {
 
 .slide ul li:nth-child(6)>div>div {
   background-image: url('images/images.png');
+}
+
+#contact{
+  margin-top: 200px;
+
+}
+form {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: gray;
+}
+
+/* FOOTER */
+
+footer{
+  margin-top: 100px;
+  height: 4vh;
+  background-color: #333;
+  
+}
+
+footer p{
+  text-align: center;
+  color: white;
 }

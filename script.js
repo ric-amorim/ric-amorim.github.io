@@ -26,10 +26,11 @@ slideButtons.forEach((button, idx) => {
 button.parentElement.classList.toggle("selected", idx === index);
 });
 
+/*
 const selectedProject = document.querySelector(`#project${index + 1}`);
 if (selectedProject) {
-selectedProject.scrollIntoView({ behavior: "smooth" });
-}
+selectedProject.scrollIntoView({ behavior: "smooth"});
+}*/
 }
 
 function startSlideShow() {

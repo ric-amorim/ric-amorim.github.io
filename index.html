@@ -10,7 +10,9 @@
 </head>
 <body>
   <nav id="desktop-nav" class="sticky-nav">
-    <div class="logo">Ricardo Amorim</div>
+    <ul class="logo">
+    <li><a href="#">Ricardo Amorim</a></li>
+    </ul>
     <div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -20,7 +22,7 @@
     </div>
   </nav>
   <nav>
-    <nav id="hamburger-nav">
+    <nav id="hamburger-nav"  class="sticky-nav"> 
       <div class="logo">Ricardo Amorim</div>
       <div class="hamburger-menu">
       <div class="hamburger-icon" onclick="toggleMenu()">
@@ -135,6 +137,30 @@
       <div class="next">&rsaquo;</div>
     </div>
   </section>
+  <section id="contact">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
+      <div class="email">
+        <form
+          action="https://formspree.io/f/mqkvewze"
+          method="POST"
+        >
+          <label>
+            Your email:
+            <input type="email" name="email">
+          </label>
+          <label>
+            Your message:
+            <textarea name="message"></textarea>
+          </label>
+          <!-- your other form fields go here -->
+          <button type="submit">Send</button>
+        </form>
+      </div>
+  </section>
+  <footer>
+    <p>Copyright &#169 2023 Ricardo Amorim. All Rights Reserved</p>
+  </footer>
 
   <!-- Your existing scripts -->
   <script src="script.js"></script>
