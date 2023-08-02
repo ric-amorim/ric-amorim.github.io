@@ -154,7 +154,6 @@ body {
     background-repeat: no-repeat;
     position:relative;
 }
-/* text css above hero image*/
 /* Keyframes for the typing animation */
 @keyframes typing {
   from {
@@ -211,7 +210,7 @@ body {
 
 #about{
   position: relative;
-  margin-top: 800px;
+  margin-top: 750px;
 }
 
 .about-containers{
@@ -259,6 +258,7 @@ body {
 .text-container{
   margin-top: -250px;
   margin-left: 30rem;
+  margin-right: 15rem;
 }
 .text-container p{
   margin-bottom: 30px;
@@ -302,17 +302,17 @@ body {
   /* Add any other styles you want for the sticky navbar */
 }
 
-/* Estilos para os links do menu */
 .nav-links a {
-  color: white; /* Defina a cor do texto para os links do menu */
+  color: white; 
 }
 
 .nav-links a:hover {
-  color: gray; /* Defina a cor do texto para os links do menu quando o mouse passar por cima */
+  color: gray; 
 }
 
+/* PROJECTS */
 #projects{
-  margin-top: 400px;
+  margin-top: 250px;
 }
 
 .slide {
@@ -496,8 +496,9 @@ body {
   background-image: url('images/images.png');
 }
 
+/*CONTACT */
 #contact{
-  margin-top: 200px;
+  margin-top: 250px;
 
 }
 form {

@@ -6,88 +6,70 @@ function toggleMenu(){
 }
 
 
-const slideDuration = 6000; // Set the duration for each slide in milliseconds (8000ms = 8 seconds)
-const slide = document.querySelector(".slide");
-const slidesList = slide.querySelector("ul");
-const slides = slidesList.querySelectorAll("li");
-const slideButtons = slide.querySelectorAll("ol li a");
-const prevButton = slide.querySelector(".prev");
-const nextButton = slide.querySelector(".next");
+const slideContainer = document.querySelector('.slide ul');
+const slideItems = document.querySelectorAll('.slide ul li');
+const prevButton = document.querySelector('.slide .prev');
+const nextButton = document.querySelector('.slide .next');
+const indicators = document.querySelectorAll('.slide ol li a');
+let selectedItemIndex = 0;
 
-let currentSlideIndex = 0;
-let slideInterval;
+function moveToSelectedSlide(index) {
+  selectedItemIndex = index;
+  const selectedProject = document.querySelector(`#project${selectedItemIndex + 1}`);
+  selectedProject.scrollIntoView({
+    behavior: 'smooth',
+    block: 'nearest',
+  });
 
-function showSlide(index) {
-slides.forEach((slide, idx) => {
-slide.classList.toggle("selected", idx === index);
-});
+  //Remove the class "selected" of all the projects
+  slideItems.forEach((item) => item.classList.remove('selected'));
 
-slideButtons.forEach((button, idx) => {
-button.parentElement.classList.toggle("selected", idx === index);
-});
+  //Add the class "selected" to the selected project
+  slideItems[selectedItemIndex].classList.add('selected');
 
-/*
-const selectedProject = document.querySelector(`#project${index + 1}`);
-if (selectedProject) {
-selectedProject.scrollIntoView({ behavior: "smooth"});
-}*/
+  updateArrowVisibility();
+  updateIndicatorVisibility();
 }
 
-function startSlideShow() {
-slideInterval = setInterval(() => {
-nextSlide();
-}, slideDuration);
+function updateArrowVisibility() {
+  prevButton.disabled = selectedItemIndex === 0;
+  nextButton.disabled = selectedItemIndex === slideItems.length - 1;
 }
 
-function stopSlideShow() {
-clearInterval(slideInterval);
+function updateIndicatorVisibility() {
+  indicators.forEach((indicator, index) => {
+    indicator.classList.toggle('selected', index === selectedItemIndex);
+    indicator.style.backgroundColor = index === selectedItemIndex ? '#333' : '#fff';
+  });
 }
 
-slide.addEventListener("mouseover", stopSlideShow);
-slide.addEventListener("mouseout", startSlideShow);
-
-function nextSlide() {
-currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-showSlide(currentSlideIndex);
-}
-
-function prevSlide() {
-currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-showSlide(currentSlideIndex);
-}
-
-slideButtons.forEach((button, idx) => {
-button.addEventListener("click", (e) => {
-e.preventDefault();
-currentSlideIndex = idx;
-showSlide(currentSlideIndex);
-stopSlideShow();
-startSlideShow();
-});
+prevButton.addEventListener('click', () => {
+  if (selectedItemIndex > 0) {
+    moveToSelectedSlide(selectedItemIndex - 1);
+  } else {
+    moveToSelectedSlide(slideItems.length - 1); // go back to the 1º project
+  }
 });
 
-prevButton.addEventListener("click", () => {
-prevSlide();
-stopSlideShow();
-startSlideShow();
+nextButton.addEventListener('click', () => {
+  if (selectedItemIndex < slideItems.length - 1) {
+    moveToSelectedSlide(selectedItemIndex + 1);
+  } else {
+    moveToSelectedSlide(0);  
+  }
 });
 
-nextButton.addEventListener("click", () => {
-nextSlide();
-stopSlideShow();
-startSlideShow();
+slideItems.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    moveToSelectedSlide(index);
+  });
 });
 
-document.addEventListener("keydown", (e) => {
-if (e.key === "ArrowLeft") {
-prevSlide();
-stopSlideShow();
-startSlideShow();
-} else if (e.key === "ArrowRight") {
-nextSlide();
-stopSlideShow();
-startSlideShow();
-}
+indicators.forEach((indicator, index) => {
+  indicator.addEventListener('click', () => {
+    moveToSelectedSlide(index);
+  });
 });
 
-startSlideShow();
+updateArrowVisibility();
+updateIndicatorVisibility();
