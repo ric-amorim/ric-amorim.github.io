@@ -87,6 +87,7 @@ a:hover{
   height: 24px;
   width: 30px;
   cursor: pointer;
+  margin-top: 7px;
 }
 
 .hamburger-icon span{
@@ -315,6 +316,8 @@ body {
   margin-top: 250px;
 }
 
+/* CSS slide inspired by: https://github.com/blsbls03/portfolio */
+
 .slide {
   position: relative;
 }
@@ -439,9 +442,7 @@ body {
 
 .slide ol li {
   list-style: none;
-  border: 2px solid rgba(0, 0, 0, 0.5); /* Adjust the color as needed */
-  border-radius: 50%;
-  padding: 3px;
+  padding: 2px;
   margin: 0 2px;
 }
 
@@ -449,14 +450,16 @@ body {
   display: block;
   height: 10px;
   width: 10px;
-  border: 2px solid rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0.2);
   background: transparent;
   border-radius: 100%;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out,border-color 0.3s ease-in-out;
 }
 
 .slide ol li.selected a {
   background: rgb(0, 0, 0);
+  border-color: rgb(0, 0, 0);
+  opacity: 1;
 }
 
 .slide .prev,
