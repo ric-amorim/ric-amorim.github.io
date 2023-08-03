@@ -18,14 +18,14 @@
     margin-top: -320px;
   }
   .sites-container {
-    margin-top: -30px; /* Ajuste o valor conforme necessário */
+    margin-top: -30px; 
     position: absolute;
-    margin-left: 80px;
+    margin-left: 90px;
   }
 
   .sites-container a {
     display: inline-block;
-    margin: 0 15px; /* Ajuste o valor conforme necessário */
+    margin: 0 15px;
   }
   footer{
     height: 8vh;
@@ -41,7 +41,7 @@
         display: flex;
     }
     .section__pic-container {
-    margin-left: -7.60rem;
+    margin-left: -7.20rem;
     margin-right:auto;
     }
   .text-container {
