@@ -15,17 +15,20 @@
   .text-container {
     margin-left: 23rem;
     margin-right: 5rem;
+    margin-top: -320px;
   }
   .sites-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: -30px; /* Ajuste o valor conforme necessário */
+    position: absolute;
+    margin-left: 80px;
   }
 
   .sites-container a {
     display: inline-block;
     margin: 0 15px; /* Ajuste o valor conforme necessário */
+  }
+  footer{
+    height: 8vh;
   }
 
 }
@@ -36,6 +39,10 @@
     }
     #hamburger-nav{
         display: flex;
+    }
+    .section__pic-container {
+    margin-left: -7.60rem;
+    margin-right:auto;
     }
   .text-container {
     margin-top: 20px;
