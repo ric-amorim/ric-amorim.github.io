@@ -12,12 +12,15 @@ const prevButton = document.querySelector('.slide .prev');
 const nextButton = document.querySelector('.slide .next');
 const indicators = document.querySelectorAll('.slide ol li a');
 let selectedItemIndex = 0;
+let touchStartX = 0;
+let touchEndX = 0;
+
 
 function moveToSelectedSlide(index) {
   selectedItemIndex = index;
   const selectedProject = document.querySelector(`#project${selectedItemIndex + 1}`);
   selectedProject.scrollIntoView({
-    behavior: 'smooth',
+    behavior: 'auto',
     block: 'nearest',
   });
 
@@ -64,6 +67,25 @@ slideItems.forEach((item, index) => {
     moveToSelectedSlide(index);
   });
 });
+slideContainer.addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX;
+});
+
+slideContainer.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].clientX;
+  handleSwipeGesture();
+});
+
+function handleSwipeGesture() {
+  const swipeDistance = touchEndX - touchStartX;
+  const threshold = 50; // Adjust the threshold as needed
+
+  if (swipeDistance > threshold && selectedItemIndex > 0) {
+    moveToSelectedSlide(selectedItemIndex - 1);
+  } else if (swipeDistance < -threshold && selectedItemIndex < slideItems.length - 1) {
+    moveToSelectedSlide(selectedItemIndex + 1);
+  }
+}
 
 indicators.forEach((indicator, index) => {
   indicator.addEventListener('click', () => {
