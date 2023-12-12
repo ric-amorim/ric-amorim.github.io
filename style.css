@@ -495,13 +495,6 @@ body {
   background-image: url('images/connectjpg');
 }
 
-.slide ul li:nth-child(6)>div>div {
-  background-image: url('images/gameof15.jpeg');
-}
-
-.slide ul li:nth-child(7)>div>div {
-  background-image: url('images/images.png');
-}
 
 /*CONTACT */
 #contact{
